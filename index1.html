@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>啦啦啦</title>
+    <style>
+    body {}
+    
+    #container {
+        /*box-shadow: inset 0 1px 0 #444, 0 -1px 0 #000;*/
+    }
+    
+    .bg {
+        background: url("img/bg.png") no-repeat center center;
+        background-size: 100% 100%;
+        height: 276px;
+        width: 807.6px;
+        position: relative;
+    }
+    
+    canvas {
+        position: absolute;
+        top: 176px;
+        left: 137px;
+    }
+    </style>
+    <script src="js/prefixfree.min.js"></script>
+</head>
+
+<body>
+    <div id="container">
+        <div class="bg">
+            <canvas id="waterfall"></canvas>
+            <button id="abcd">start</button>
+            <button id="abc">stop</button>
+        </div>
+    </div>
+    <script src="js/index.js"></script>
+    <script type="text/javascript">
+    var c = document.getElementById('waterfall');
+    var cw = c.width = 110;
+    var ch = c.height = 100;
+    var waterfall = new waterfallCanvas(c, cw, ch);
+    if (document.getElementById('abc')) {
+        document.getElementById('abc').onclick = function() {
+            waterfall.stop();
+        }
+    }
+    if (document.getElementById('abcd')) {
+        document.getElementById('abcd').onclick = function() {
+            waterfall.init();
+        }
+    }
+    </script>
+</body>
+
+</html>

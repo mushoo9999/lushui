@@ -1,0 +1,198 @@
+ * {
+     box-sizing: border-box;
+     margin: 0;
+     padding: 0;
+ }
+ 
+ html,
+ body {
+     height: 100%;
+     width: 100%;
+ }
+ 
+ .swiper-container {
+     margin: 0 auto;
+     overflow: hidden;
+ }
+ .swiper-wrapper{
+    margin-left:calc(50% - 1200px);
+ }
+ .flex {
+     display: flex;
+     align-items: center;
+     justify-content: center
+ }
+ 
+ 
+ .swiper-button-prev{left:20px;}
+ .swiper-button-next{right:20px;}
+ .rongqi {
+     width: 100%;
+     height: 100%;
+     max-width: 1685px;
+     max-height: 805px;
+     position: relative;
+     overflow: hidden
+ }
+ 
+ .content {
+     display: flex;
+     height: 100%;
+     width: 100%;
+     align-items: center;
+     justify-content: center;
+     background: url(../img/bg.jpg) no-repeat center center;
+     background-size: 100% 100%;
+     overflow: hidden
+ }
+ 
+ .map {
+     width: 1685px;
+     height: 805px;
+     display: block
+ }
+ 
+ .gif {
+     width: 1685px;
+     height: 805px;
+     position: relative;
+     left: 3px;
+     top: 3px;
+ }
+ 
+ .myfadeIn {
+     animation: fadeIn 2s ease-out 5s backwards;
+ }
+ 
+ .myfadeOut {
+     animation: fadeOut 1s ease-in 4s forwards
+ }
+ 
+ .biaoji {
+     position: absolute;
+     left: 0;
+     top: 0;
+     transform: translate3d(0, 0, 0);
+     transition: all 1s ease;
+ }
+ 
+ .biaoji .daba {
+     font-size: 16px;
+     position: absolute;
+     opacity: 0;
+     color: #fff;
+ }
+ 
+ .biaoji .daba.active i {
+     color: #ef2d2d;
+     animation: shanshuo 2s ease-in 0.3s backwards
+ }
+ 
+ .biaoji .daba i {
+     color: #ffc000;
+     font-size: 20px;
+     cursor: pointer;
+     transition: color .3s
+ }
+ .biaoji .daba i:hover{
+     color:#b58904;
+ }
+ .model {
+     height: 100%;
+     width: 100%;
+     position: fixed;
+     background-color: rgba(114, 114, 114, .4);
+     left: 0;
+     top: 0;
+     visibility: hidden;
+ }
+ 
+ .model.show {
+     visibility: visible;
+ }
+ 
+ .model.show .swiper-container {
+     animation: zoomIn .5s ease backwards;
+ }
+ 
+ .model.show .text {
+     animation: fadeIn .8s ease backwards;
+ }
+ 
+ .model.out .swiper-container {
+     animation: zoomOut .5s ease backwards;
+ }
+ 
+ .model.out .text {
+     animation: fadeOut .5s ease backwards;
+ }
+ 
+ .text {
+     position: absolute;
+     left: 0;
+     top: 0;
+     width: 100%;
+     padding-left: 15%;
+     padding-right: 15%;
+     height: calc(50% - 200px);
+     color: #fff;
+     font-family: "KaiTi";
+     font-size: 24px;
+     line-height: 1.4;
+     letter-spacing: .1rem;
+     text-indent: 2em;
+     text-align: justify;
+ }
+ .pointer_none{
+     pointer-events: none;
+     cursor: default;
+ }
+ .icon-close{
+     position: absolute;
+     right:15px;
+     top:15px;
+     font-size:24px;
+     color:#fff;
+     cursor: pointer;
+     transition: all .3s;
+     z-index: 2
+ }
+ .icon-close:hover{
+     color:rgb(255,0,0);
+     transform: rotate(180deg);
+ }
+ .toggle{
+     position: fixed;
+     bottom:15px;
+     left:calc(50% - 25px);
+     z-index:999;
+     font-size:50px;
+     transition: opacity .5s;
+     cursor: pointer
+ }
+ .toggle:hover{
+     opacity: 0.6
+ }
+ .toggle.icon-play{
+     color:#fff;
+ }
+ .toggle.icon-pause{
+     color:#fff;
+ }
+ @keyframes shanshuo {
+     from {
+         color: #ffc000;
+     }
+     25% {
+         color: #ef2d2d;
+     }
+     50% {
+         color: #ffc000;
+     }
+     75% {
+         color: #ef2d2d;
+     }
+     to {
+         color: #ffc000;
+     }
+ }
